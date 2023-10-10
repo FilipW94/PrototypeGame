@@ -12,8 +12,9 @@ public class LargeSizeState : MonoState
         Vector3 currentSize = this.transform.localScale;
         targetSize = originalSize * 5f;
         playerMovement.moveSpeed = normalMoveSpeed * 2f;
-        playerMovement.jumpForce  = normalJumpForce * 1.5f;
+        playerMovement.jumpForce  = normalJumpForce * 1.3f;
         playerMovement.distanceToGround = 4.05f;        //this number seems to work well
+        transform.gameObject.tag = "LargeSize";
         StartCoroutine(ChangeSizeSmoothly(targetSize, currentSize));
         
     }

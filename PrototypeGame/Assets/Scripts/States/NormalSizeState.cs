@@ -11,6 +11,7 @@ public class NormalSizeState : MonoState
         playerMovement.moveSpeed = normalMoveSpeed;
         playerMovement.jumpForce = normalJumpForce;
         Vector3 currentSize = this.transform.localScale;
+        transform.gameObject.tag = "NormalSize";
         StartCoroutine(ChangeSizeSmoothly(originalSize, currentSize));
     }
     

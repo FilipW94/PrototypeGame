@@ -14,6 +14,7 @@ public class SmallSizeState : MonoState
         playerMovement.jumpForce = normalJumpForce * 0.7f;
         Vector3 currentSize = this.transform.localScale;
         targetSize = originalSize * 0.1f;
+        transform.gameObject.tag = "SmallSize";
         StartCoroutine(ChangeSizeSmoothly(targetSize, currentSize));
     }
 }
