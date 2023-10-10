@@ -23,13 +23,13 @@ public class Brain : MonoBehaviour
 
         switch(Input.inputString)
         {
-            case "n":
+            case "2":
                 SwitchToState("NormalSizeState");
                 break;
-            case "s":
+            case "1":
                 SwitchToState("SmallSizeState");
                 break;
-            case "l":
+            case "3":
                 SwitchToState("LargeSizeState");
                 break;
         }

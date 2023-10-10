@@ -9,7 +9,7 @@ public class LargeSizeState : MonoState
     public override void OnEnter()
     {
         Vector3 currentSize = this.transform.localScale;
-        targetSize = originalSize * 10f;
+        targetSize = originalSize * 5f;
         
         StartCoroutine(ChangeSizeSmoothly(targetSize, currentSize));
     }
