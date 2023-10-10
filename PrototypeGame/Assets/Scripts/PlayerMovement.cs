@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
+    public float distanceToGround = 0.2f;
 
     public Transform orientation;
 
@@ -38,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + distanceToGround, whatIsGround);
         
         MyInput();
         SpeedControl();
@@ -60,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(jumpKey) && readyTojump && grounded)
         {
-            Debug.Log("Jump");
             readyTojump = false;
 
             Jump();
@@ -71,7 +71,6 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-
 
         if(grounded)
         {
@@ -87,7 +86,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
-
         }
     }
     private void Jump()

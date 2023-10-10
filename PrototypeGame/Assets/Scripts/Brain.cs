@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Xml.Serialization;
-using TMPro;
+
 using UnityEngine;
 using Utility.StateMachine;
 using Utility.StateMachine.BaseStates;
@@ -37,16 +35,14 @@ public class Brain : MonoBehaviour
     }
     private void SwitchToState(string stateName)
     {
-
         foreach (var state in _states)
         {
             var monoState = state as MonoState;
             if (state.GetType().Name == stateName && !monoState.IsChangingSize())
             {
-                
-          
-                    _stackMachine.Clear();
-                    _stackMachine.PushState(state);
+                monoState.SetisChangingSize(true);
+                _stackMachine.Clear();
+                _stackMachine.PushState(state);
                 
                 return;
             }
