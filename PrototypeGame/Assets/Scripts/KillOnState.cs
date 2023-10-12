@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KillOnState : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class KillOnState : MonoBehaviour
     {
         if(other.CompareTag(killOnState) || other.CompareTag(killOnStateAlso)) 
         {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
             other.transform.position = respawnPoint.position;
         }
     }

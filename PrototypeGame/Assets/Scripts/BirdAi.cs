@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BirdAi : MonoBehaviour
 {
@@ -59,6 +60,10 @@ public class BirdAi : MonoBehaviour
         if(other.CompareTag("LargeSize"))
         {
             Destroy(this.gameObject);
+        }
+        else if(other.CompareTag("SmallSize"))
+        {
+            player.GetComponent<Brain>().RespawnPlayer();
         }
     }
 

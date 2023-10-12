@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utility.StateMachine;
 using Utility.StateMachine.BaseStates;
 
@@ -47,5 +48,10 @@ public class Brain : MonoBehaviour
                 return;
             }
         }
+    }
+    public void RespawnPlayer()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }
