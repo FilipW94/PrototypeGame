@@ -28,9 +28,9 @@ public class BirdAi : MonoBehaviour
                 break;
             case "NormalSize":
                 isMovingTowardsCharacter = false;
-                //StopMovingTowardsCharacter();
                 break;
             case "LargeSize":
+                isMovingTowardsCharacter = false;
                 break;
             default: break;
         }
