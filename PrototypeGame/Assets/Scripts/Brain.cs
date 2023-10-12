@@ -48,11 +48,4 @@ public class Brain : MonoBehaviour
             }
         }
     }
-    private void OnDrawGizmosSelected()
-    {
-        if (Application.isPlaying)
-        {
-            _stackMachine.OnDrawGizmosSelected(transform.position);
-        }
-    }
 }
